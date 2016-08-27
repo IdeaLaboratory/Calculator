@@ -1,9 +1,9 @@
-?	Multiple operators and operand (bodmas rule)
-?	Binary , decimal , hexadecimal
-?	Prime check
-?	Ap GP series determine
-?	No of prime factors
-?	Solving equations
-?	Ans from complex equation
-?	Matrix operations
-?	 Power a^b
+#	Multiple operators and operand (bodmas rule)
+#	Binary , decimal , hexadecimal
+#	Prime check
+#	Ap GP series determine
+#	No of prime factors
+#	Solving equations
+#	Ans from complex equation
+#	Matrix operations
+#	 Power a^b
