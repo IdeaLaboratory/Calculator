@@ -5,12 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Calculator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Calculator" Height="346" Width="504" ResizeMode="CanMinimize">
+
+
     <Grid>
-        <TextBox x:Name="InputTB" HorizontalAlignment="Left" Height="30" Margin="25,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="360" Text="{Binding InputString}" HorizontalContentAlignment="Right"/>
-        <TextBox x:Name="OutputTB" HorizontalAlignment="Left" Height="30" Margin="25,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="360" Text="="/>
-        <Button x:Name="calculateBT" Content="Calculate" HorizontalAlignment="Left" Height="60" Margin="415,20,0,0" VerticalAlignment="Top" Width="75" Click="calculateBT_Click"/>
-
-
+        <Grid.Resources>
+            <ResourceDictionary>
+                <local:BasicKeys x:Key="KeyPad"></local:BasicKeys>
+                <local:ExtendedKeys x:Key="KeyPadExtended"></local:ExtendedKeys>
+            </ResourceDictionary>
+        </Grid.Resources>
+        <TextBox x:Name="InputTB" HorizontalAlignment="Left" Height="30" Margin="55,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="410" Text="{Binding InputString}" HorizontalContentAlignment="Right"/>
+        <TextBox x:Name="OutputTB" HorizontalAlignment="Left" Height="30" Margin="55,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="410" Text="="/>
+        <Button x:Name="calculateBT" Visibility="Collapsed" Content="Calculate" HorizontalAlignment="Left" Height="60" Margin="390,20,0,0" VerticalAlignment="Top" Width="75" Click="calculateBT_Click"/>
+        <local:BasicKeys Margin="235,95,6,51" ></local:BasicKeys>
+        <local:ExtendedKeys Margin="48,97,248,51"/>
     </Grid>
 </Window>
