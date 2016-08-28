@@ -16,21 +16,13 @@ using System.Windows.Shapes;
 namespace Calculator
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for ExtendedKeys.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ExtendedKeys : UserControl
     {
-        public MainWindow()
+        public ExtendedKeys()
         {
             InitializeComponent();
-            ViewModel.CalculationManager VMInstance = ViewModel.CalculationManager.Instance;
-            this.DataContext = VMInstance;
         }
-
-        private void calculateBT_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
     }
 }

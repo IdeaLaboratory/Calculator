@@ -55,6 +55,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BasicKeys.xaml.cs">
+      <DependentUpon>BasicKeys.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExtendedKeys.xaml.cs">
+      <DependentUpon>ExtendedKeys.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Model\Bracket.cs" />
     <Compile Include="Model\Constant.cs" />
     <Compile Include="Model\Expression.cs" />
@@ -63,6 +69,14 @@
     <Compile Include="Model\Token.cs" />
     <Compile Include="ViewModel\CalculateCommand.cs" />
     <Compile Include="ViewModel\CommandFactory.cs" />
+    <Page Include="BasicKeys.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExtendedKeys.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
