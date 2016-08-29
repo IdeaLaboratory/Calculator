@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Calculator.Model
 {
-    public class Constant : Token
+    /// <summary>
+    /// Literal is nothing but the constant values.
+    /// ToDO:
+    /// </summary>
+    public class Literal : Token
     {
 
     }
