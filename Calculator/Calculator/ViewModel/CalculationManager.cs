@@ -10,7 +10,7 @@ namespace Calculator.ViewModel
     {
         #region variables & properties
 
-        private string inputString = null;// "2 + (5 - 3) * 8";
+        private string inputString =  "2 + ( 5 - 3 ) * 8";// null;//
 
         public string InputString
         {

@@ -62,6 +62,7 @@
       <DependentUpon>ExtendedKeys.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Bracket.cs" />
+    <Compile Include="Model\Evaluation.cs" />
     <Compile Include="Model\Literal.cs" />
     <Compile Include="Model\Expression.cs" />
     <Compile Include="Model\Operand.cs" />

@@ -12,6 +12,24 @@ namespace Calculator.Model
     /// </summary>
     public class Literal : Token
     {
+        private double _value;
 
+        public double Value
+        {
+            get { return _value; }
+            set { value = _value; }
+        }
+
+        public Literal(char ch)
+        {
+            try
+            {
+                Double.TryParse(ch.ToString(), out _value);
+            }
+            catch (Exception e)
+            {
+                throw new Exception("invalid character:" + ch);
+            }
+        }
     }
 }

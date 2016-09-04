@@ -33,7 +33,7 @@
             <Button x:Name="button12" Content="C" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45"/>
             <Button x:Name="button15" Content="EC" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45"/>
 
-            <Button x:Name="button17" Content="=" HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="45" RenderTransformOrigin="2.778,0.75" Click="button17_Click"/>
+            <Button x:Name="button17" Content="=" HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="45" RenderTransformOrigin="2.778,0.75" Click="equal_Click"/>
         </WrapPanel>
     </Grid>
 
