@@ -8,13 +8,5 @@ namespace Calculator.Model
 {
     public class Token
     {
-        private string data;
-
-        public string Data
-        {
-            get { return data; }
-            set { data = value; }
-        }
-
     }
 }

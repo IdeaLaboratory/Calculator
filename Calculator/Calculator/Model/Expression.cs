@@ -29,43 +29,57 @@ namespace Calculator.Model
 
         private List<Token> Tokenize(string p_inputString)
         {
-            List<Token> result = null;
+            List<Token> result = new List<Token>();
 
             //ToDo
             string[] inputArray = p_inputString.Split();
 
             for (int i = 0; i < inputArray.Length; i++)
             {
+                //Token
+                Token tkn = null;
                 char ch = Convert.ToChar(inputArray[i]);
                 if (Char.IsNumber(ch))
                 {
-                    Token lit = new Literal(ch);
+                    tkn = new Literal(ch);
+                    result.Add(tkn);
                     //Todo: Send it to Evalution
                 }
-                else if (Char.IsSymbol(ch))
+
+
+                else if (ch == '(' || ch == ')')
+                {
+                    //ToDo
+                }
+                else
                 {
                     switch (ch)
                     {
                         case '+':
                             // do some stuff
+                            tkn = new AditionOperator(ch);
+                            result.Add(tkn);
                             break;
                         case '-':
                             // do some stuff
+                            tkn = new SubtractionOperator(ch);
+                            result.Add(tkn);
                             break;
                         case '*':
                             // do some stuff
+                            tkn = new MultiplicationOperator(ch);
+                            result.Add(tkn);
                             break;
                         case '/':
                             // do some stuff
+                            tkn = new DivisionOperator(ch);
+                            result.Add(tkn);
                             break;
                         default:
-                            throw new Exception();
+                            throw new Exception("invalid symbol");
                             break;
+
                     }
-                }
-                else if(ch=='(' || ch==')')
-                {
-                    //ToDo
                 }
             }
 

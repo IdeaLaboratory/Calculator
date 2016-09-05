@@ -12,6 +12,14 @@ namespace Calculator.Model
     /// </summary>
     public class Literal : Token
     {
+        //private string data;
+
+        //public string Data
+        //{
+        //    get { return data; }
+        //    set { data = value; }
+        //}
+
         private double _value;
 
         public double Value
