@@ -18,6 +18,15 @@ namespace Calculator.ViewModel
                 return getCalculateCommand;
             }
         }
+        private static ICommand getNumpadCommand;
+        public static ICommand GetNumpadCommand
+        {
+            get
+            {
+                getNumpadCommand = new NumpadCommand();
+                return getNumpadCommand;
+            }
+        }
 
 
     }

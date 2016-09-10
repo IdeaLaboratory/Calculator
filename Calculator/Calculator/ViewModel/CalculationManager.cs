@@ -1,24 +1,42 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Calculator.ViewModel
 {
-    public class CalculationManager
+    public class CalculationManager : INotifyPropertyChanged
     {
+
+        private void OnPropertyChanged(String propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+
+
         #region variables & properties
 
-        private string inputString =  "2 + ( 5 - 3 ) * 8";// null;//
+        private string inputString = null;// null;//
 
         public string InputString
         {
             get { return inputString; }
-            set { inputString = value; }
+            set
+            {
+                inputString = value;
+                OnPropertyChanged("InputString");
+            }
         }
 
         private static CalculationManager instance = null;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
         public static CalculationManager Instance
         {
             get

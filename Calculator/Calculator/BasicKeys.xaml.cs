@@ -29,5 +29,12 @@ namespace Calculator
         {
             ViewModel.CommandFactory.GetCalculateCommand.Execute(null);
         }
+
+   
+
+        private void BasicKeysClick(object sender, RoutedEventArgs e)
+        {
+            ViewModel.CommandFactory.GetNumpadCommand.Execute((sender as Button).Content.ToString());
+        }
     }
 }

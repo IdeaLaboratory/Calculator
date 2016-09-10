@@ -78,6 +78,7 @@
     <Compile Include="Model\Tokens\Token.cs" />
     <Compile Include="ViewModel\CalculateCommand.cs" />
     <Compile Include="ViewModel\CommandFactory.cs" />
+    <Compile Include="ViewModel\NumpadCommand.cs" />
     <Page Include="BasicKeys.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

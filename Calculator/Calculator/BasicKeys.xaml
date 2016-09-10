@@ -8,32 +8,32 @@
 
     <Grid>
         <WrapPanel Margin="5,5,0,0" Orientation="Horizontal" HorizontalAlignment="Left" Width="135" Height="165" VerticalAlignment="Top">
-            <Button x:Name="button1" Content="1" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45"/>
-            <Button x:Name="button2" Content="2" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45"/>
-            <Button x:Name="button3" Content="3" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45"/>
+            <Button x:Name="buttonOne" Content="1" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
+            <Button x:Name="buttonTwo" Content="2" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
+            <Button x:Name="buttonThree" Content="3" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
 
-            <Button x:Name="button4" Content="4" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" RenderTransformOrigin="2.778,0.75"/>
-            <Button x:Name="button5" Content="5" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45"/>
-            <Button x:Name="button6" Content="6" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45"/>
-            <Button x:Name="button7" Content="7" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" RenderTransformOrigin="2.778,0.75"/>
-            <Button x:Name="button8" Content="8" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45"/>
-            <Button x:Name="button9" Content="9" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45"/>
-            <Button x:Name="button0" Content="0" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="90" RenderTransformOrigin="2.778,0.75"/>
-            <Button x:Name="buttonPoint" Content="." HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45"/>
+            <Button x:Name="buttonFour" Content="4" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
+            <Button x:Name="buttonFive" Content="5" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
+            <Button x:Name="buttonSix" Content="6" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
+            <Button x:Name="buttonSeven" Content="7" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
+            <Button x:Name="buttonEight" Content="8" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
+            <Button x:Name="buttonNine" Content="9" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
+            <Button x:Name="buttonZero" Content="0" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="90" Click="BasicKeysClick"/>
+            <Button x:Name="buttonPoint" Content="." HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
 
         </WrapPanel>
         <WrapPanel Margin="140,5,0,0" Orientation="Horizontal" HorizontalAlignment="Left" Width="52" Height="165" VerticalAlignment="Top">
-            <Button x:Name="button10" Content="-" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45"/>
-            <Button x:Name="button11" Content="+" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45"/>
-            <Button x:Name="button13" Content="*" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45"/>
+            <Button x:Name="buttonMinus" Content="-" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
+            <Button x:Name="buttonPlus" Content="+" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
+            <Button x:Name="buttonMult" Content="*" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
 
-            <Button x:Name="button14" Content="/" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" RenderTransformOrigin="2.778,0.75"/>
+            <Button x:Name="buttonDiv" Content="/" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
         </WrapPanel>
         <WrapPanel Margin="185,5,0,0" Orientation="Horizontal" Height="165" VerticalAlignment="Top" HorizontalAlignment="Left" Width="45">
-            <Button x:Name="button12" Content="C" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45"/>
-            <Button x:Name="button15" Content="EC" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45"/>
+            <Button x:Name="buttonClear" Content="C" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" />
+            <Button x:Name="buttonEC" Content="EC" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" />
 
-            <Button x:Name="button17" Content="=" HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="45" RenderTransformOrigin="2.778,0.75" Click="equal_Click"/>
+            <Button x:Name="buttonEqual" Content="=" HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
         </WrapPanel>
     </Grid>
 
