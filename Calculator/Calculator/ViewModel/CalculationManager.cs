@@ -9,7 +9,7 @@ namespace Calculator.ViewModel
 {
     public class CalculationManager : INotifyPropertyChanged
     {
-
+        public event PropertyChangedEventHandler PropertyChanged;
         private void OnPropertyChanged(String propertyName)
         {
             if (PropertyChanged != null)
@@ -17,7 +17,6 @@ namespace Calculator.ViewModel
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
         }
-
 
         #region variables & properties
 
@@ -33,9 +32,21 @@ namespace Calculator.ViewModel
             }
         }
 
+        private string _outputString;
+
+        public string OutputString
+        {
+            get { return _outputString; }
+            set
+            {
+                _outputString = value;
+                OnPropertyChanged("OutputString");
+            }
+        }
+
+
         private static CalculationManager instance = null;
 
-        public event PropertyChangedEventHandler PropertyChanged;
 
         public static CalculationManager Instance
         {
@@ -63,7 +74,8 @@ namespace Calculator.ViewModel
             Model.Expression exp = new Model.Expression(inputString);
             //exp.Tokenize();
             //exp.Validate();
-            exp.Calculate();
+            string result = exp.Calculate();
+            OutputString = result;
         }
         #endregion
 

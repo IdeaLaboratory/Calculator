@@ -28,7 +28,7 @@ namespace Calculator.Model
             set { value = _value; }
         }
 
-        public Literal(char ch)
+        public Literal(string ch)
         {
             try
             {

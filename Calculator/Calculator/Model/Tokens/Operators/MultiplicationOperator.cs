@@ -8,9 +8,15 @@ namespace Calculator.Model
 {
     class MultiplicationOperator : Operator
     {
-        public MultiplicationOperator(char p_ch)
+        public MultiplicationOperator(string p_ch)
         {
-            base.Priority = 2;
+            base.Priority = 4;
+        }
+
+        public override Token Evalute(List<Token> args)
+        {
+            double result = (args[0] as Literal).Value * (args[1] as Literal).Value;
+            return new Literal(result.ToString());
         }
     }
 }

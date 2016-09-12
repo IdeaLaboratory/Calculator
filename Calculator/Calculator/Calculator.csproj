@@ -61,6 +61,7 @@
     <Compile Include="ExtendedKeys.xaml.cs">
       <DependentUpon>ExtendedKeys.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\SubEquation.cs" />
     <Compile Include="Model\Tokens\Operators\AditionOperator.cs" />
     <Compile Include="Model\Tokens\Bracket.cs" />
     <Compile Include="Model\Tokens\Operators\DecrementOperator.cs" />
@@ -72,7 +73,7 @@
     <Compile Include="Model\Tokens\Operators\ModulusOperator.cs" />
     <Compile Include="Model\Tokens\Operators\MultiplicationOperator.cs" />
     <Compile Include="Model\Tokens\Operand.cs" />
-    <Compile Include="Model\Operator.cs" />
+    <Compile Include="Model\Tokens\Operators\Operator.cs" />
     <Compile Include="Model\Parser.cs" />
     <Compile Include="Model\Tokens\Operators\SubtractionOperator.cs" />
     <Compile Include="Model\Tokens\Token.cs" />

@@ -38,47 +38,46 @@ namespace Calculator.Model
             {
                 //Token
                 Token tkn = null;
-                char ch = Convert.ToChar(inputArray[i]);
-                if (Char.IsNumber(ch))
+                string ch = Convert.ToString(inputArray[i]);
+                double tempD;
+                if (double.TryParse(ch, out tempD))
                 {
-                    tkn = new Literal(ch);
+                    tkn = new Literal(tempD.ToString());
                     result.Add(tkn);
                     //Todo: Send it to Evalution
                 }
-
-
-                else if (ch == '(' || ch == ')')
+                else if (ch == "(" || ch == ")")
                 {
                     //ToDo
+
                 }
                 else
                 {
                     switch (ch)
                     {
-                        case '+':
+                        case "+":
                             // do some stuff
                             tkn = new AditionOperator(ch);
                             result.Add(tkn);
                             break;
-                        case '-':
+                        case "-":
                             // do some stuff
                             tkn = new SubtractionOperator(ch);
                             result.Add(tkn);
                             break;
-                        case '*':
+                        case "*":
                             // do some stuff
                             tkn = new MultiplicationOperator(ch);
                             result.Add(tkn);
                             break;
-                        case '/':
+                        case "/":
                             // do some stuff
                             tkn = new DivisionOperator(ch);
                             result.Add(tkn);
                             break;
                         default:
                             throw new Exception("invalid symbol");
-                            break;
-
+                            //break;
                     }
                 }
             }
@@ -97,8 +96,16 @@ namespace Calculator.Model
         public string Calculate()
         {
             string result = null;
-            //ToDo
+            Evaluation eval = new Evaluation();
             List<Token> tokenizedExpression = Tokenize(inputString);
+
+            foreach (Token tkn in tokenizedExpression)
+            {
+                eval.Push(tkn);
+            }
+
+            //
+            result = eval.Summerize();
 
             return result;
         }

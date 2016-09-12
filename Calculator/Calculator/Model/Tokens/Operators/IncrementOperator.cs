@@ -9,6 +9,9 @@ namespace Calculator.Model
     [ObsoleteAttribute("Not implemented", true)]
     class IncrementOperator : Operator
     {
-
+        public override Token Evalute(List<Token> args)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

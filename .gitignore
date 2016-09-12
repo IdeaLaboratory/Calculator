@@ -6,6 +6,7 @@
 *.user
 *.userosscache
 *.sln.docstates
+*.bak
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -243,3 +244,9 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+/Calculator/Calculator/ViewModel/CommandFactory.cs.bak
+/Calculator/Calculator/ViewModel/CalculationManager.cs.bak
+/Calculator/Calculator/ExtendedKeys.xaml.bak
+/Calculator/Calculator/Calculator.csproj.bak
+/Calculator/Calculator/BasicKeys.xaml.cs.bak
+/Calculator/Calculator/BasicKeys.xaml.bak

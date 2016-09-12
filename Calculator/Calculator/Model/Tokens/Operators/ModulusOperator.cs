@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Calculator.Model
 {
+    [ObsoleteAttribute("Not implemented", true)]
     class ModulusOperator : Operator
     {
+        public override Token Evalute(List<Token> args)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
