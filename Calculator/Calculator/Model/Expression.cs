@@ -32,9 +32,10 @@ namespace Calculator.Model
             List<Token> result = new List<Token>();
 
             //ToDo
-            string[] inputArray = p_inputString.Split();
+            Parser parserObj = new Parser(p_inputString);
+            List<string> inputArray = parserObj.Tokenize();// p_inputString.Split();
 
-            for (int i = 0; i < inputArray.Length; i++)
+            for (int i = 0; i < inputArray.Count; i++)
             {
                 //Token
                 Token tkn = null;

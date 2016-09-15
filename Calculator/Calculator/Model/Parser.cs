@@ -38,9 +38,47 @@ namespace Calculator.Model
 
         public char Pop(int p_index)
         {
-            char result = Input[0];
+            char result = Input[p_index];
 
             return result;
+        }
+
+        public List<string> Tokenize()
+        {
+            List<string> result = new List<string>();
+            bool isdigit = false;
+
+            string ch = null;
+            for (int i = Position; Position < Input.Length-1; i++)
+            {
+
+                if (char.IsDigit(Input[Position]))
+                {
+                    isdigit = true;
+                    ch = null;
+                    ch += Input[Position];
+                    while (isdigit && MaxPosition(Position) && char.IsDigit(Input[++Position]))
+                    {
+                        ch += Input[Position];
+                    }
+                }
+                else
+                {
+                    ch = null;
+                    isdigit = false;
+                    ch += Input[Position++];
+                }
+
+                result.Add(ch);
+
+                //break;
+            }
+            return result;
+        }
+
+        private bool MaxPosition(int poistion)
+        {
+            return poistion < Input.Length - 1;
         }
     }
 }

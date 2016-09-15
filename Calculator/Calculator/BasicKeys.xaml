@@ -33,7 +33,7 @@
             <Button x:Name="buttonClear" Content="C" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" />
             <Button x:Name="buttonEC" Content="EC" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" />
 
-            <Button x:Name="buttonEqual" Content="=" HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
+            <Button x:Name="buttonEqual" Content="=" HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="45" Click="equal_Click"/>
         </WrapPanel>
     </Grid>
 
