@@ -27,7 +27,15 @@ namespace Calculator.ViewModel
                 return getNumpadCommand;
             }
         }
-
+        private static ICommand getClearLastInputCommand;
+        public static ICommand GetClearLastInputCommand
+        {
+            get
+            {
+                getClearLastInputCommand = new ClearLastInputCommand();
+                return getClearLastInputCommand;
+            }
+        }
 
     }
 }

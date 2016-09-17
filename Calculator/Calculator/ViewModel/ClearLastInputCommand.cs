@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace Calculator.ViewModel
 {
-    class NumpadCommand : ICommand
+    class ClearLastInputCommand : ICommand
     {
         public event EventHandler CanExecuteChanged;
 
@@ -18,11 +18,12 @@ namespace Calculator.ViewModel
 
         public void Execute(object parameter)
         {
-            //ToDo
-            if (parameter != null)
-                CalculationManager.Instance.InputString += parameter.ToString();
-            else
-                throw new Exception("");
+            if (!String.IsNullOrEmpty(CalculationManager.Instance.InputString))
+            {
+                string tempStr = CalculationManager.Instance.InputString;
+                tempStr = tempStr.Substring(0, tempStr.Length - 1);
+                CalculationManager.Instance.InputString = tempStr;
+            }
         }
     }
 }

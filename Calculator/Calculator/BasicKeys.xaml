@@ -30,7 +30,7 @@
             <Button x:Name="buttonDiv" Content="/" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
         </WrapPanel>
         <WrapPanel Margin="185,5,0,0" Orientation="Horizontal" Height="165" VerticalAlignment="Top" HorizontalAlignment="Left" Width="45">
-            <Button x:Name="buttonClear" Content="C" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" />
+            <Button x:Name="buttonClear" Content="C" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="ClearClick"/>
             <Button x:Name="buttonEC" Content="EC" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" />
 
             <Button x:Name="buttonEqual" Content="=" HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="45" Click="equal_Click"/>
