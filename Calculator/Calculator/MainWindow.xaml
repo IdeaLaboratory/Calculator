@@ -18,7 +18,7 @@
         <TextBox x:Name="InputTB" HorizontalAlignment="Left" Height="30" Margin="55,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="410" Text="{Binding InputString}" HorizontalContentAlignment="Right"/>
         <TextBox x:Name="OutputTB" HorizontalAlignment="Left" Height="30" Margin="55,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="410" Text="{Binding OutputString}" HorizontalContentAlignment="Right"/>
         <Button x:Name="calculateBT" Visibility="Collapsed" Content="Calculate" HorizontalAlignment="Left" Height="60" Margin="390,20,0,0" VerticalAlignment="Top" Width="75" Click="calculateBT_Click"/>
-        <local:BasicKeys Margin="235,95,6,51" ></local:BasicKeys>
+        <local:BasicKeys Margin="235,95,0,10" ></local:BasicKeys>
         <local:ExtendedKeys Margin="48,97,248,51"/>
     </Grid>
 </Window>

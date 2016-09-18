@@ -5,36 +5,57 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Calculator"
              >
-
+    <UserControl.Resources>
+        <local:HexaKeyConverter x:Key="HexKeyVisibility" ></local:HexaKeyConverter>
+        <local:OctKeyConverter x:Key="OctKeyVisibility" ></local:OctKeyConverter>
+        <local:BinKeyConverter x:Key="BinKeyVisibility" ></local:BinKeyConverter>
+        <local:InverseBinKeyConverter x:Key="InvBinKeyVisibility" ></local:InverseBinKeyConverter>
+    </UserControl.Resources>
     <Grid>
-        <WrapPanel Margin="5,5,0,0" Orientation="Horizontal" HorizontalAlignment="Left" Width="135" Height="165" VerticalAlignment="Top">
-            <Button x:Name="buttonOne" Content="1" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
-            <Button x:Name="buttonTwo" Content="2" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
-            <Button x:Name="buttonThree" Content="3" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
+        <Grid Height="205" >
+            <WrapPanel Visibility="{Binding NumberMode, Converter={StaticResource BinKeyVisibility}}" Margin="5,5,0,0" Orientation="Horizontal" HorizontalAlignment="Left" Width="135" Height="165" VerticalAlignment="Top">
+                <Button x:Name="buttonOne" Content="1" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
+                <Button x:Name="buttonTwo" Content="2" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
+                <Button x:Name="buttonThree" Content="3" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
 
-            <Button x:Name="buttonFour" Content="4" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
-            <Button x:Name="buttonFive" Content="5" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
-            <Button x:Name="buttonSix" Content="6" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
-            <Button x:Name="buttonSeven" Content="7" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
-            <Button x:Name="buttonEight" Content="8" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
-            <Button x:Name="buttonNine" Content="9" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
-            <Button x:Name="buttonZero" Content="0" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="90" Click="BasicKeysClick"/>
-            <Button x:Name="buttonPoint" Content="." HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
+                <Button x:Name="buttonFour" Content="4" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
+                <Button x:Name="buttonFive" Content="5" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
+                <Button x:Name="buttonSix" Content="6" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
+                <Button x:Name="buttonSeven" Content="7" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
+                <Button x:Name="buttonEight" Content="8" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick" IsEnabled="{Binding NumberMode, Converter={StaticResource ResourceKey=OctKeyVisibility}}"/>
+                <Button x:Name="buttonNine" Content="9" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick" IsEnabled="{Binding NumberMode, Converter={StaticResource ResourceKey=OctKeyVisibility}}"/>
+                <Button x:Name="buttonZero" Content="0" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="90" Click="BasicKeysClick"/>
+                <Button x:Name="buttonPoint" Content="." HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
 
-        </WrapPanel>
-        <WrapPanel Margin="140,5,0,0" Orientation="Horizontal" HorizontalAlignment="Left" Width="52" Height="165" VerticalAlignment="Top">
-            <Button x:Name="buttonMinus" Content="-" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
-            <Button x:Name="buttonPlus" Content="+" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
-            <Button x:Name="buttonMult" Content="*" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
+            </WrapPanel>
+            <WrapPanel Margin="140,5,0,0" Orientation="Horizontal" HorizontalAlignment="Left" Width="52" Height="165" VerticalAlignment="Top">
+                <Button x:Name="buttonMinus" Content="-" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
+                <Button x:Name="buttonPlus" Content="+" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
+                <Button x:Name="buttonMult" Content="*" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
 
-            <Button x:Name="buttonDiv" Content="/" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
-        </WrapPanel>
-        <WrapPanel Margin="185,5,0,0" Orientation="Horizontal" Height="165" VerticalAlignment="Top" HorizontalAlignment="Left" Width="45">
-            <Button x:Name="buttonClear" Content="C" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="ClearClick"/>
-            <Button x:Name="buttonEC" Content="EC" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" />
+                <Button x:Name="buttonDiv" Content="/" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
+            </WrapPanel>
+            <WrapPanel Margin="185,5,0,0" Orientation="Horizontal" Height="165" VerticalAlignment="Top" HorizontalAlignment="Left" Width="45">
+                <Button x:Name="buttonClear" Content="C" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="ClearClick"/>
+                <Button x:Name="buttonEC" Content="CE" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" />
 
-            <Button x:Name="buttonEqual" Content="=" HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="45" Click="equal_Click"/>
-        </WrapPanel>
+                <Button x:Name="buttonEqual" Content="=" HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="45" Click="equal_Click"/>
+            </WrapPanel>
+            <WrapPanel Name="HexaKeys" Visibility="{Binding NumberMode, Converter={StaticResource ResourceKey=HexKeyVisibility}}"  Orientation="Horizontal" HorizontalAlignment="Left" Width="270" Height="160" VerticalAlignment="Top" Margin="5,165,-45,-155">
+                <Button x:Name="buttonA" Content="A" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
+                <Button x:Name="buttonB" Content="B" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
+                <Button x:Name="buttonC" Content="C" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
+                <Button x:Name="buttonD" Content="D" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
+                <Button x:Name="buttonE" Content="E" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
+                <Button x:Name="buttonF" Content="F" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
+            </WrapPanel>
+        </Grid>
+        <Grid Visibility="{Binding NumberMode, Converter={StaticResource InvBinKeyVisibility}}">
+            <WrapPanel Margin="5,5,0,0" Orientation="Horizontal" HorizontalAlignment="Left" Width="135" Height="165" VerticalAlignment="Top">
+                <Button x:Name="buttonZeroBin" Content="0" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
+                <Button x:Name="buttonOneBin" Content="1" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
+                <Button x:Name="buttonPointBin" Content="." HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="45" Click="BasicKeysClick"/>
+            </WrapPanel>
+        </Grid>
     </Grid>
-
 </UserControl>

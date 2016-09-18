@@ -18,6 +18,28 @@ namespace Calculator.ViewModel
             }
         }
 
+        public enum Mode
+        {
+            Dec, Oct, Hex, Bin, None
+        };
+
+        private Mode numberMode = Mode.Dec;
+
+        public Mode NumberMode
+        {
+            get { return numberMode; }
+            set
+            {
+                if (value != Mode.None)
+                {
+                    OnPropertyChanged("OutputString");
+                    numberMode = value;
+                    OnPropertyChanged("NumberMode");
+                }
+            }
+        }
+
+
         #region variables & properties
 
         private string inputString = null;// null;//
@@ -36,7 +58,14 @@ namespace Calculator.ViewModel
 
         public string OutputString
         {
-            get { return _outputString; }
+            get
+            {
+                if (NumberMode == Mode.Bin)
+                    return Convert.ToString(Convert.ToInt32(_outputString, 10), 2);
+                else
+
+                    return _outputString;
+            }
             set
             {
                 _outputString = value;
@@ -78,7 +107,5 @@ namespace Calculator.ViewModel
             OutputString = result;
         }
         #endregion
-
-
     }
 }

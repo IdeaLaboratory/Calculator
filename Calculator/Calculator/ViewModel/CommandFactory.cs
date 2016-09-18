@@ -37,5 +37,14 @@ namespace Calculator.ViewModel
             }
         }
 
+        private static ICommand getNumberModeCommand;
+        public static ICommand GetNumberModeCommand
+        {
+            get
+            {
+                getNumberModeCommand = new NumberModeCommand();
+                return getNumberModeCommand;
+            }
+        }
     }
 }

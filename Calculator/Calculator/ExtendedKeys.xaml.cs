@@ -24,5 +24,10 @@ namespace Calculator
         {
             InitializeComponent();
         }
+
+        private void DecClicked(object sender, RoutedEventArgs e)
+        {
+            ViewModel.CommandFactory.GetNumberModeCommand.Execute((sender as RadioButton).Content);
+        }
     }
 }
